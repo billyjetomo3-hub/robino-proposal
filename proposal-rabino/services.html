@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Community Frontline Services, Public Health Programs, and Assistance - Barangay San Isidro.">
+  <title>Community Services · Barangay Community Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="page-fade-in">
+
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <a href="index.html" class="brand-link" aria-label="Home">
+        <div class="brand-emblem-slot"></div>
+        <div class="brand-titles">
+          <span class="brand-name dynamic-barangay-name">Barangay San Isidro</span>
+          <span class="brand-tagline">Community Portal</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-item"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="announcements.html" class="nav-item"><i class="fa-solid fa-bullhorn"></i> Announcements</a>
+        <a href="documents.html" class="nav-item"><i class="fa-solid fa-file-signature"></i> Documents</a>
+        <a href="officials.html" class="nav-item"><i class="fa-solid fa-users"></i> Officials</a>
+        <a href="services.html" class="nav-item active"><i class="fa-solid fa-hand-holding-hand"></i> Services</a>
+        <a href="feedback.html" class="nav-item"><i class="fa-solid fa-comments"></i> Feedback</a>
+        <a href="about.html" class="nav-item"><i class="fa-solid fa-circle-info"></i> About</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="icon-btn search-trigger-btn" title="Search Records"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button type="button" class="icon-btn theme-toggle-btn" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <button type="button" class="icon-btn sound-toggle-btn" title="Toggle Sound"><i class="fa-solid fa-volume-high"></i><span class="badge-dot"></span></button>
+        <a href="login.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-shield-halved"></i> Admin</a>
+        <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <nav class="mobile-nav-drawer" id="mobileNavDrawer">
+      <a href="index.html" class="mobile-nav-link"><span><i class="fa-solid fa-house"></i> Home</span> <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="announcements.html" class="mobile-nav-link"><span><i class="fa-solid fa-bullhorn"></i> Announcements</span> <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="documents.html" class="mobile-nav-link"><span><i class="fa-solid fa-file-signature"></i> Documents</span> <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="officials.html" class="mobile-nav-link"><span><i class="fa-solid fa-users"></i> Officials</span> <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="services.html" class="mobile-nav-link active"><span><i class="fa-solid fa-hand-holding-hand"></i> Services</span> <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="feedback.html" class="mobile-nav-link"><span><i class="fa-solid fa-comments"></i> Feedback</span> <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="about.html" class="mobile-nav-link"><span><i class="fa-solid fa-circle-info"></i> About</span> <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="login.html" class="mobile-nav-link" style="color:var(--primary-blue); font-weight:700;"><span><i class="fa-solid fa-shield-halved"></i> Admin Login</span> <i class="fa-solid fa-arrow-right"></i></a>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <section style="background: linear-gradient(135deg, #0E2238 0%, #173860 60%, #185E38 100%); color: #FFFFFF; padding: 3.5rem 0 4rem 0;">
+    <div class="container" style="text-align: center;">
+      <span class="badge" style="background: rgba(46, 204, 113, 0.2); color: #2ECC71; margin-bottom: 0.85rem;"><i class="fa-solid fa-hand-holding-heart"></i> Citizen Welfare</span>
+      <h1 style="color: #FFFFFF; font-size: 2.5rem; margin-bottom: 0.75rem;">Community Frontline Services</h1>
+      <p style="color: #CBD5E1; max-width: 620px; margin: 0 auto; font-size: 1.05rem;">
+        Complete directory of frontline services, clearances, wellness medical clinics, and senior &amp; youth assistance programs.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container" style="padding-top: 3rem; padding-bottom: 5rem;">
+    <!-- Frontline Quick Info Banner -->
+    <div class="card" style="margin-bottom: 2.5rem; background: linear-gradient(135deg, var(--primary-blue-light) 0%, var(--secondary-green-light) 100%); border: 1px solid rgba(30, 90, 168, 0.2);">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; align-items: center;">
+        <div style="display:flex; align-items:center; gap:1rem;">
+          <div style="width:48px; height:48px; border-radius:50%; background:var(--primary-blue); color:#FFF; display:flex; align-items:center; justify-content:center; font-size:1.25rem;">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <div>
+            <div style="font-size:0.75rem; text-transform:uppercase; font-weight:700; color:var(--text-muted);">Office Hours</div>
+            <div style="font-weight:700; font-size:0.95rem; color:var(--text-primary);">Mon–Fri: 8:00 AM – 5:00 PM</div>
+          </div>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:1rem;">
+          <div style="width:48px; height:48px; border-radius:50%; background:var(--secondary-green); color:#FFF; display:flex; align-items:center; justify-content:center; font-size:1.25rem;">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div>
+            <div style="font-size:0.75rem; text-transform:uppercase; font-weight:700; color:var(--text-muted);">Frontline Helpdesk</div>
+            <div style="font-weight:700; font-size:0.95rem; color:var(--text-primary);">(02) 8527-7788 / 0917-000-1234</div>
+          </div>
+        </div>
+
+        <div style="text-align: right;">
+          <a href="documents.html" class="btn btn-primary"><i class="fa-solid fa-file-signature"></i> Apply for Clearance</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem;">
+      <button type="button" class="btn btn-outline btn-sm srv-filter-btn active" data-cat="all">All Services</button>
+      <button type="button" class="btn btn-outline btn-sm srv-filter-btn" data-cat="Document">Certificates &amp; Clearance</button>
+      <button type="button" class="btn btn-outline btn-sm srv-filter-btn" data-cat="Social Welfare">Social Welfare</button>
+      <button type="button" class="btn btn-outline btn-sm srv-filter-btn" data-cat="Commerce">Business &amp; Trade</button>
+      <button type="button" class="btn btn-outline btn-sm srv-filter-btn" data-cat="Elderly Care">Senior Citizens</button>
+      <button type="button" class="btn btn-outline btn-sm srv-filter-btn" data-cat="Youth">Youth Programs</button>
+    </div>
+
+    <!-- Services Grid -->
+    <div id="servicesGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.75rem;">
+      <!-- Injected via services.js -->
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem;">
+            <div class="brand-emblem-slot"></div>
+            <div>
+              <div style="color:#FFF; font-weight:800; font-size:1.15rem;" class="dynamic-barangay-name">Barangay San Isidro</div>
+              <div style="color:var(--secondary-green-accent); font-size:0.72rem; text-transform:uppercase;">Community Portal</div>
+            </div>
+          </div>
+          <p class="footer-brand-desc">Dedicated to open digital governance, rapid emergency response, and transparent community service.</p>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Portal Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="announcements.html">Announcements</a></li>
+            <li><a href="documents.html">Document Services</a></li>
+            <li><a href="officials.html">Officials Directory</a></li>
+            <li><a href="services.html">Community Programs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Citizen Help</h4>
+          <ul class="footer-links">
+            <li><a href="feedback.html">Submit Feedback</a></li>
+            <li><a href="about.html">About Barangay</a></li>
+            <li><a href="about.html#faq">FAQ &amp; Help</a></li>
+            <li><a href="login.html">Admin Portal</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Transparency</h4>
+          <p style="font-size:0.85rem; color:#94A3B8; margin-bottom:1rem;">Compliant with Full Disclosure Policy under DILG Memorandum Circular.</p>
+          <div style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(255,255,255,0.08); padding:0.4rem 0.85rem; border-radius:var(--radius-md); font-size:0.78rem; color:#86EFAC;">
+            <i class="fa-solid fa-certificate"></i> Verified Citizen Seal
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 <strong class="dynamic-barangay-name">Barangay San Isidro</strong>. All Rights Reserved.</div>
+        <button type="button" class="back-to-top-btn"><i class="fa-solid fa-arrow-up"></i> Back to Top</button>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/sound.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/services.js"></script>
+</body>
+</html>

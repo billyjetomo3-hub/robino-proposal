@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Administrative Staff Login - Barangay San Isidro Information Portal.">
+  <title>Admin Login · Barangay Community Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="page-fade-in" style="background: linear-gradient(135deg, #09172A 0%, #173860 50%, #0F3822 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem 1.5rem;">
+
+  <div class="card" style="max-width: 460px; width: 100%; padding: 2.5rem 2.25rem; box-shadow: var(--shadow-xl); border: 1px solid rgba(255, 255, 255, 0.15);">
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <a href="index.html" style="display: inline-block; margin-bottom: 1rem;">
+        <div style="width: 64px; height: 64px; margin: 0 auto;">
+          <div class="brand-emblem-slot"></div>
+        </div>
+      </a>
+      <h1 style="font-size: 1.65rem; margin-bottom: 0.35rem; color: var(--text-primary);">Staff Administration</h1>
+      <p style="font-size: 0.88rem; color: var(--text-secondary); margin: 0;">Barangay Community Information Portal</p>
+    </div>
+
+    <!-- Demo Credentials Notice -->
+    <div style="background: var(--primary-blue-light); border: 1px solid rgba(30, 90, 168, 0.25); border-radius: var(--radius-md); padding: 0.85rem 1rem; margin-bottom: 1.5rem; font-size: 0.82rem; color: var(--primary-blue);">
+      <div style="font-weight: 700; margin-bottom: 0.25rem;"><i class="fa-solid fa-key"></i> Default Demo Credentials:</div>
+      <div>Username: <strong style="font-family: monospace;">admin</strong> | Password: <strong style="font-family: monospace;">admin123</strong></div>
+    </div>
+
+    <form id="adminLoginForm">
+      <div class="form-group">
+        <label class="form-label" for="adminUsername">Username</label>
+        <div style="position: relative;">
+          <i class="fa-solid fa-user" style="position: absolute; left: 14px; top: 14px; color: var(--text-muted); font-size: 0.9rem;"></i>
+          <input type="text" id="adminUsername" class="form-control" placeholder="Enter admin username" style="padding-left: 2.5rem;" required autofocus>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="adminPassword">Password</label>
+        <div style="position: relative;">
+          <i class="fa-solid fa-lock" style="position: absolute; left: 14px; top: 14px; color: var(--text-muted); font-size: 0.9rem;"></i>
+          <input type="password" id="adminPassword" class="form-control" placeholder="Enter admin password" style="padding-left: 2.5rem;" required>
+        </div>
+      </div>
+
+      <div id="loginErrorMsg" style="display: none; background: var(--color-danger-light); color: var(--color-danger); padding: 0.65rem 1rem; border-radius: var(--radius-md); font-size: 0.85rem; margin-bottom: 1.25rem;">
+        <i class="fa-solid fa-circle-exclamation"></i> Invalid credentials.
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-bottom: 1.25rem;">
+        <i class="fa-solid fa-right-to-bracket"></i> Authenticate &amp; Access Dashboard
+      </button>
+
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <a href="index.html" style="font-size: 0.88rem; color: var(--text-muted); font-weight: 600;">
+          <i class="fa-solid fa-arrow-left"></i> Return to Resident Portal
+        </a>
+      </div>
+    </form>
+
+    <!-- Security Limitation Notice -->
+    <div style="border-top: 1px solid var(--border-color); padding-top: 1.25rem; font-size: 0.72rem; color: var(--text-muted); line-height: 1.5; text-align: center;">
+      <i class="fa-solid fa-shield-halved"></i> <strong>Frontend Demonstration Notice:</strong> This portal uses browser LocalStorage authentication for portfolio review. Production government deployment requires enterprise backend RBAC, SSL encryption, and certified document archives.
+    </div>
+  </div>
+
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/sound.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // If already authenticated, redirect to admin.html
+      if (window.BarangayAuth && window.BarangayAuth.isAuthenticated()) {
+        window.location.replace('admin.html');
+        return;
+      }
+
+      const form = document.getElementById('adminLoginForm');
+      const errBox = document.getElementById('loginErrorMsg');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const u = document.getElementById('adminUsername').value.trim();
+        const p = document.getElementById('adminPassword').value;
+
+        const result = window.BarangayAuth.login(u, p);
+        if (result.success) {
+          errBox.style.display = 'none';
+          window.BarangayComponents.showToast('Login authorized. Loading dashboard...', 'success');
+          setTimeout(() => {
+            window.location.href = 'admin.html';
+          }, 350);
+        } else {
+          errBox.textContent = result.message;
+          errBox.style.display = 'block';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS & TOUCH ENHANCEMENTS
+   ========================================================================== */
+
+/* Large Tablets & Small Laptops (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .admin-charts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablets (max-width: 860px) */
+@media (max-width: 860px) {
+  .main-nav {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: flex;
+  }
+
+  .admin-sidebar {
+    transform: translateX(-100%);
+  }
+
+  .admin-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .admin-main {
+    margin-left: 0;
+  }
+
+  .admin-topbar {
+    padding: 0 1.25rem;
+  }
+
+  .admin-content {
+    padding: 1.25rem;
+  }
+
+  .section-title {
+    font-size: 1.85rem;
+  }
+
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.75rem; }
+}
+
+/* Mobile Phones (max-width: 600px) */
+@media (max-width: 600px) {
+  .header-container {
+    height: 64px;
+    padding: 0 1rem;
+  }
+
+  .mobile-nav-drawer {
+    top: 64px;
+    height: calc(100vh - 64px);
+    padding: 1rem;
+  }
+
+  .brand-emblem-svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand-name {
+    font-size: 1rem;
+  }
+
+  .brand-tagline {
+    font-size: 0.65rem;
+  }
+
+  .header-actions .btn {
+    display: none;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .admin-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .table-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .table-search-input {
+    width: 100%;
+  }
+
+  .modal-overlay {
+    padding: 0.75rem;
+  }
+
+  .modal-box {
+    max-height: 95vh;
+  }
+
+  .modal-header, .modal-body, .modal-footer {
+    padding: 1rem 1.25rem;
+  }
+
+  .toast-container {
+    left: 12px;
+    right: 12px;
+    bottom: 16px;
+  }
+
+  .toast {
+    min-width: unset;
+    width: 100%;
+  }
+}

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Administrative Command Dashboard - Barangay San Isidro.">
+  <title>Admin Dashboard · Barangay Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="admin-body page-fade-in">
+
+  <!-- Left Sidebar -->
+  <aside class="admin-sidebar" id="adminSidebar">
+    <div class="sidebar-brand">
+      <div class="brand-emblem-slot" style="width:36px; height:36px;"></div>
+      <div>
+        <div class="sidebar-title dynamic-barangay-name">Barangay San Isidro</div>
+        <div class="sidebar-sub">Admin Dashboard</div>
+      </div>
+    </div>
+
+    <ul class="sidebar-menu">
+      <li><a href="#dashboard" class="sidebar-link active" data-tab="dashboard"><i class="fa-solid fa-chart-pie"></i> Overview</a></li>
+      <li><a href="#announcements" class="sidebar-link" data-tab="announcements"><i class="fa-solid fa-bullhorn"></i> Announcements</a></li>
+      <li><a href="#requests" class="sidebar-link" data-tab="requests"><i class="fa-solid fa-file-signature"></i> Requests</a></li>
+      <li><a href="#officials" class="sidebar-link" data-tab="officials"><i class="fa-solid fa-users"></i> Officials</a></li>
+      <li><a href="#feedback" class="sidebar-link" data-tab="feedback"><i class="fa-solid fa-comments"></i> Feedback</a></li>
+      <li><a href="#services" class="sidebar-link" data-tab="services"><i class="fa-solid fa-hand-holding-hand"></i> Services</a></li>
+      <li><a href="#events" class="sidebar-link" data-tab="events"><i class="fa-solid fa-calendar-days"></i> Events</a></li>
+      <li><a href="#settings" class="sidebar-link" data-tab="settings"><i class="fa-solid fa-gear"></i> Settings</a></li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <a href="index.html" class="sidebar-link" target="_blank" style="margin-bottom:0.35rem;">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i> Resident Portal
+      </a>
+      <button type="button" class="sidebar-link btn-danger" id="adminLogoutBtn" style="width:100%; border:none;">
+        <i class="fa-solid fa-right-from-bracket"></i> Logout
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content Wrapper -->
+  <div class="admin-main">
+    <header class="admin-topbar">
+      <div class="topbar-left">
+        <h2 class="topbar-title" id="adminSectionTitle">Executive Dashboard &amp; Analytics</h2>
+      </div>
+
+      <div class="topbar-right">
+        <button type="button" class="icon-btn search-trigger-btn" title="Search Records"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button type="button" class="icon-btn theme-toggle-btn" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <button type="button" class="icon-btn sound-toggle-btn" title="Toggle Sound"><i class="fa-solid fa-volume-high"></i><span class="badge-dot"></span></button>
+        <div class="admin-user-pill">
+          <div class="admin-avatar"><i class="fa-solid fa-user"></i></div>
+          <span>Admin</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="admin-content">
+
+      <!-- TAB 1: EXECUTIVE DASHBOARD -->
+      <section class="admin-tab-pane" id="tab-dashboard">
+        <div class="admin-stats-grid">
+          <div class="admin-stat-card">
+            <div>
+              <div class="stat-info-title">Announcements</div>
+              <div class="stat-info-number" id="adminStatAnn">0</div>
+              <div class="stat-info-trend"><i class="fa-solid fa-arrow-trend-up"></i> Active</div>
+            </div>
+            <div class="stat-card-icon" style="background:var(--primary-blue-light); color:var(--primary-blue);"><i class="fa-solid fa-bullhorn"></i></div>
+          </div>
+
+          <div class="admin-stat-card">
+            <div>
+              <div class="stat-info-title">Document Requests</div>
+              <div class="stat-info-number" id="adminStatReq">0</div>
+              <div class="stat-info-trend"><i class="fa-solid fa-file-circle-check"></i> Applications</div>
+            </div>
+            <div class="stat-card-icon" style="background:var(--secondary-green-light); color:var(--secondary-green);"><i class="fa-solid fa-file-signature"></i></div>
+          </div>
+
+          <div class="admin-stat-card">
+            <div>
+              <div class="stat-info-title">Citizen Feedback</div>
+              <div class="stat-info-number" id="adminStatFb">0</div>
+              <div class="stat-info-trend" style="color:var(--color-warning);"><i class="fa-solid fa-comment-dots"></i> Desk Tickets</div>
+            </div>
+            <div class="stat-card-icon" style="background:#FEF3C7; color:#B45309;"><i class="fa-solid fa-comments"></i></div>
+          </div>
+
+          <div class="admin-stat-card">
+            <div>
+              <div class="stat-info-title">Officials</div>
+              <div class="stat-info-number" id="adminStatOff">0</div>
+              <div class="stat-info-trend"><i class="fa-solid fa-shield-halved"></i> Council</div>
+            </div>
+            <div class="stat-card-icon" style="background:#E0F2FE; color:#0284C7;"><i class="fa-solid fa-users"></i></div>
+          </div>
+
+          <div class="admin-stat-card">
+            <div>
+              <div class="stat-info-title">Events</div>
+              <div class="stat-info-number" id="adminStatEvt">0</div>
+              <div class="stat-info-trend"><i class="fa-solid fa-calendar-check"></i> Scheduled</div>
+            </div>
+            <div class="stat-card-icon" style="background:#F3E8FF; color:#7E22CE;"><i class="fa-solid fa-calendar-days"></i></div>
+          </div>
+        </div>
+
+        <!-- HTML Canvas Charts Grid -->
+        <div class="admin-charts-grid">
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3 class="chart-title"><i class="fa-solid fa-chart-column text-primary-blue"></i> Document Requests by Type</h3>
+              <span class="badge badge-blue">Canvas API</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="requestsChartCanvas"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3 class="chart-title"><i class="fa-solid fa-chart-pie text-secondary-green"></i> Citizen Feedback Breakdown</h3>
+              <span class="badge badge-green">Canvas API</span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="feedbackChartCanvas"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: ANNOUNCEMENTS -->
+      <section class="admin-tab-pane" id="tab-announcements" style="display:none;">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h3 class="admin-card-title">Manage Announcements</h3>
+            <button type="button" class="btn btn-primary btn-sm" id="openAddAnnouncementModalBtn">
+              <i class="fa-solid fa-plus"></i> New Announcement
+            </button>
+          </div>
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Title &amp; Date</th>
+                  <th>Category</th>
+                  <th>Visibility</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="adminAnnouncementsTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: DOCUMENT REQUESTS -->
+      <section class="admin-tab-pane" id="tab-requests" style="display:none;">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h3 class="admin-card-title">Manage Document Requests</h3>
+            <button type="button" class="btn btn-secondary btn-sm" id="exportRequestsCsvBtn">
+              <i class="fa-solid fa-file-csv"></i> Export to CSV
+            </button>
+          </div>
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Ref ID</th>
+                  <th>Applicant</th>
+                  <th>Document Type</th>
+                  <th>Purpose</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Print Slip</th>
+                </tr>
+              </thead>
+              <tbody id="adminRequestsTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: OFFICIALS DIRECTORY -->
+      <section class="admin-tab-pane" id="tab-officials" style="display:none;">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h3 class="admin-card-title">Manage Barangay Officials</h3>
+            <button type="button" class="btn btn-primary btn-sm" id="openAddOfficialModalBtn">
+              <i class="fa-solid fa-user-plus"></i> Add Official
+            </button>
+          </div>
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name &amp; Email</th>
+                  <th>Position</th>
+                  <th>Contact Number</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="adminOfficialsTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 5: CITIZEN FEEDBACK -->
+      <section class="admin-tab-pane" id="tab-feedback" style="display:none;">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h3 class="admin-card-title">Citizen Feedback &amp; Complaints Desk</h3>
+          </div>
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Citizen Name</th>
+                  <th>Category</th>
+                  <th>Subject &amp; Message</th>
+                  <th>Status</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody id="adminFeedbackTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 6: SERVICES -->
+      <section class="admin-tab-pane" id="tab-services" style="display:none;">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h3 class="admin-card-title">Frontline Community Services</h3>
+          </div>
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Service Name &amp; Description</th>
+                  <th>Category</th>
+                  <th>Turnaround Time</th>
+                  <th>Fee</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody id="adminServicesTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 7: EVENTS -->
+      <section class="admin-tab-pane" id="tab-events" style="display:none;">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h3 class="admin-card-title">Barangay Events Calendar</h3>
+          </div>
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Event Title &amp; Details</th>
+                  <th>Date &amp; Time</th>
+                  <th>Venue</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody id="adminEventsTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 8: PORTAL SETTINGS -->
+      <section class="admin-tab-pane" id="tab-settings" style="display:none;">
+        <div class="card" style="max-width:850px; margin-bottom:2rem;">
+          <h3 style="font-size:1.35rem; margin-bottom:1.5rem; border-bottom:1px solid var(--border-color); padding-bottom:0.75rem;">
+            <i class="fa-solid fa-sliders text-primary-blue"></i> General Barangay Configurations
+          </h3>
+
+          <form id="adminSettingsForm">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem;">
+              <div class="form-group">
+                <label class="form-label" for="settingBarangayName">Barangay Name</label>
+                <input type="text" id="settingBarangayName" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="settingCity">City / Municipality</label>
+                <input type="text" id="settingCity" class="form-control" required>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem;">
+              <div class="form-group">
+                <label class="form-label" for="settingProvince">Province</label>
+                <input type="text" id="settingProvince" class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="settingOfficeHours">Frontline Office Hours</label>
+                <input type="text" id="settingOfficeHours" class="form-control">
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem;">
+              <div class="form-group">
+                <label class="form-label" for="settingHotlinePolice">Police Hotline</label>
+                <input type="text" id="settingHotlinePolice" class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="settingHotlineFire">Fire Hotline</label>
+                <input type="text" id="settingHotlineFire" class="form-control">
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem;">
+              <div class="form-group">
+                <label class="form-label" for="settingHotlineHealth">Health Center Hotline</label>
+                <input type="text" id="settingHotlineHealth" class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="settingHotlineOffice">Barangay Desk Phone</label>
+                <input type="text" id="settingHotlineOffice" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="settingAddress">Barangay Hall Address</label>
+              <input type="text" id="settingAddress" class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="settingEmail">Official Email</label>
+              <input type="email" id="settingEmail" class="form-control">
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:2rem; padding-top:1.25rem; border-top:1px solid var(--border-color);">
+              <button type="button" class="btn btn-outline" id="resetDemoDataBtn">
+                <i class="fa-solid fa-rotate-left"></i> Re-seed Sample Demo Records
+              </button>
+              <button type="submit" class="btn btn-primary">
+                <i class="fa-solid fa-floppy-disk"></i> Save Portal Settings
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/sound.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

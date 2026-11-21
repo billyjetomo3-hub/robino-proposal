@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Submit Citizen Feedback, Incident Reports, and Community Suggestions - Barangay San Isidro.">
+  <title>Citizen Feedback · Barangay Community Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="page-fade-in">
+
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <a href="index.html" class="brand-link" aria-label="Home">
+        <div class="brand-emblem-slot"></div>
+        <div class="brand-titles">
+          <span class="brand-name dynamic-barangay-name">Barangay San Isidro</span>
+          <span class="brand-tagline">Community Portal</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-item"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="announcements.html" class="nav-item"><i class="fa-solid fa-bullhorn"></i> Announcements</a>
+        <a href="documents.html" class="nav-item"><i class="fa-solid fa-file-signature"></i> Documents</a>
+        <a href="officials.html" class="nav-item"><i class="fa-solid fa-users"></i> Officials</a>
+        <a href="services.html" class="nav-item"><i class="fa-solid fa-hand-holding-hand"></i> Services</a>
+        <a href="feedback.html" class="nav-item active"><i class="fa-solid fa-comments"></i> Feedback</a>
+        <a href="about.html" class="nav-item"><i class="fa-solid fa-circle-info"></i> About</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="icon-btn search-trigger-btn" title="Search Records"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button type="button" class="icon-btn theme-toggle-btn" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <button type="button" class="icon-btn sound-toggle-btn" title="Toggle Sound"><i class="fa-solid fa-volume-high"></i><span class="badge-dot"></span></button>
+        <a href="login.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-shield-halved"></i> Admin</a>
+        <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <nav class="mobile-nav-drawer" id="mobileNavDrawer">
+      <a href="index.html" class="mobile-nav-link"><span><i class="fa-solid fa-house"></i> Home</span> <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="announcements.html" class="mobile-nav-link"><span><i class="fa-solid fa-bullhorn"></i> Announcements</span> <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="documents.html" class="mobile-nav-link"><span><i class="fa-solid fa-file-signature"></i> Documents</span> <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="officials.html" class="mobile-nav-link"><span><i class="fa-solid fa-users"></i> Officials</span> <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="services.html" class="mobile-nav-link"><span><i class="fa-solid fa-hand-holding-hand"></i> Services</span> <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="feedback.html" class="mobile-nav-link active"><span><i class="fa-solid fa-comments"></i> Feedback</span> <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="about.html" class="mobile-nav-link"><span><i class="fa-solid fa-circle-info"></i> About</span> <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="login.html" class="mobile-nav-link" style="color:var(--primary-blue); font-weight:700;"><span><i class="fa-solid fa-shield-halved"></i> Admin Login</span> <i class="fa-solid fa-arrow-right"></i></a>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <section style="background: linear-gradient(135deg, #0E2238 0%, #173860 60%, #185E38 100%); color: #FFFFFF; padding: 3.5rem 0 4rem 0;">
+    <div class="container" style="text-align: center;">
+      <span class="badge" style="background: rgba(46, 204, 113, 0.2); color: #2ECC71; margin-bottom: 0.85rem;"><i class="fa-solid fa-comments"></i> Public Assistance Desk</span>
+      <h1 style="color: #FFFFFF; font-size: 2.5rem; margin-bottom: 0.75rem;">Citizen Feedback &amp; Suggestions</h1>
+      <p style="color: #CBD5E1; max-width: 620px; margin: 0 auto; font-size: 1.05rem;">
+        Your voice matters. Send concerns, report maintenance issues, or share constructive ideas to improve our barangay community.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container" style="padding-top: 3.5rem; padding-bottom: 5rem;">
+    <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3rem; align-items: start;">
+      
+      <!-- Feedback Form Card -->
+      <div class="card">
+        <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1.5rem; border-bottom:1px solid var(--border-color); padding-bottom:1rem;">
+          <div style="width:40px; height:40px; border-radius:var(--radius-md); background:var(--secondary-green-light); color:var(--secondary-green); display:flex; align-items:center; justify-content:center; font-size:1.2rem;">
+            <i class="fa-solid fa-pen-nib"></i>
+          </div>
+          <div>
+            <h3 style="font-size:1.3rem; margin:0;">Submit Your Message</h3>
+            <p style="font-size:0.85rem; margin:0;">All inquiries are routed directly to the public desk.</p>
+          </div>
+        </div>
+
+        <form id="citizenFeedbackForm">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+            <div class="form-group">
+              <label class="form-label" for="fbName">Full Name *</label>
+              <input type="text" id="fbName" class="form-control" placeholder="Maria L. Santos" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="fbEmail">Email Address *</label>
+              <input type="email" id="fbEmail" class="form-control" placeholder="name@email.com" required>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+            <div class="form-group">
+              <label class="form-label" for="fbCategory">Category *</label>
+              <select id="fbCategory" class="form-control" required>
+                <option value="Concern">Concern / Inquiry</option>
+                <option value="Report">Report Incident / Issue</option>
+                <option value="Suggestion">Constructive Suggestion</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="fbSubject">Subject Line *</label>
+              <input type="text" id="fbSubject" class="form-control" placeholder="Brief summary of topic..." required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="fbMessage">Detailed Message / Description *</label>
+            <textarea id="fbMessage" class="form-control" rows="4" placeholder="Describe the concern, location details, or recommendation clearly..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-secondary btn-lg" style="width: 100%;">
+            <i class="fa-solid fa-paper-plane"></i> Send Feedback to Barangay Desk
+          </button>
+        </form>
+      </div>
+
+      <!-- Guidelines Card -->
+      <div>
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--text-primary);"><i class="fa-solid fa-shield-heart" style="color:var(--secondary-green);"></i> Citizen Guidelines</h3>
+          <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:0.85rem; font-size:0.9rem; color:var(--text-secondary);">
+            <li style="display:flex; align-items:flex-start; gap:0.65rem;">
+              <i class="fa-solid fa-check" style="color:var(--secondary-green); margin-top:3px;"></i>
+              <span><strong>Constructive:</strong> Keep messages polite for faster handling.</span>
+            </li>
+            <li style="display:flex; align-items:flex-start; gap:0.65rem;">
+              <i class="fa-solid fa-check" style="color:var(--secondary-green); margin-top:3px;"></i>
+              <span><strong>Locations:</strong> For road or streetlight repairs, note the Purok.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card" style="background: var(--bg-alt);">
+          <h4 style="font-size: 1.05rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-phone-volume" style="color:var(--color-danger);"></i> Urgent Emergencies</h4>
+          <p style="font-size: 0.88rem; margin-bottom: 0.75rem;">For crimes or fires, call emergency hotlines immediately:</p>
+          <div style="font-size: 0.95rem; font-weight: 700; color: var(--color-danger);">
+            Emergency 911 / Police: (02) 8527-3011
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem;">
+            <div class="brand-emblem-slot"></div>
+            <div>
+              <div style="color:#FFF; font-weight:800; font-size:1.15rem;" class="dynamic-barangay-name">Barangay San Isidro</div>
+              <div style="color:var(--secondary-green-accent); font-size:0.72rem; text-transform:uppercase;">Community Portal</div>
+            </div>
+          </div>
+          <p class="footer-brand-desc">Dedicated to open digital governance, rapid emergency response, and transparent community service.</p>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Portal Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="announcements.html">Announcements</a></li>
+            <li><a href="documents.html">Document Services</a></li>
+            <li><a href="officials.html">Officials Directory</a></li>
+            <li><a href="services.html">Community Programs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Citizen Help</h4>
+          <ul class="footer-links">
+            <li><a href="feedback.html">Submit Feedback</a></li>
+            <li><a href="about.html">About Barangay</a></li>
+            <li><a href="about.html#faq">FAQ &amp; Help</a></li>
+            <li><a href="login.html">Admin Portal</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Transparency</h4>
+          <p style="font-size:0.85rem; color:#94A3B8; margin-bottom:1rem;">Compliant with Full Disclosure Policy under DILG Memorandum Circular.</p>
+          <div style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(255,255,255,0.08); padding:0.4rem 0.85rem; border-radius:var(--radius-md); font-size:0.78rem; color:#86EFAC;">
+            <i class="fa-solid fa-certificate"></i> Verified Citizen Seal
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 <strong class="dynamic-barangay-name">Barangay San Isidro</strong>. All Rights Reserved.</div>
+        <button type="button" class="back-to-top-btn"><i class="fa-solid fa-arrow-up"></i> Back to Top</button>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/sound.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/feedback.js"></script>
+</body>
+</html>
+
